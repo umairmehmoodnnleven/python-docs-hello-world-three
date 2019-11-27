@@ -22,20 +22,20 @@ dash_app2.layout = html.Div([html.H1('Hi there, I am app2 for reports')])
 def hello():
     return 'hello world!'
 
-@server.route('/dashboard/')
-def render_dashboard():
-    return flask.redirect('/dash1/')
+#@server.route('/dashboard/')
+#def render_dashboard():
+#    return flask.redirect('/dash1/')
 
 
-@server.route('/reports/')
-def render_reports():
-    return flask.redirect('/dash2/')
+#@server.route('/reports/')
+#def render_reports():
+#    return flask.redirect('/dash2/')
 
-app = DispatcherMiddleware(server, {
-    '/dash1/': dash_app1.server,
-    '/dash2/': dash_app2.server
-})
+#app = DispatcherMiddleware(server, {
+#    '/dash1/': dash_app1.server,
+#    '/dash2/': dash_app2.server
+#})
 
-if __name__ == '__main__':
-    server.run()
+#if __name__ == '__main__':
+#    server.run()
     #run_simple(application= app, use_reloader=True, use_debugger=True)
