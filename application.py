@@ -37,5 +37,5 @@ app = DispatcherMiddleware(server, {
 })
 
 if __name__ == '__main__':
-    app.run()
-    #run_simple('localhost', 80, app, use_reloader=True, use_debugger=True)
+    #app.run()
+    run_simple(application= app, use_reloader=True, use_debugger=True)
