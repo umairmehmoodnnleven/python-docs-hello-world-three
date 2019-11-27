@@ -5,6 +5,9 @@ app = Flask(__name__)
 def hello():
     return "Hello World How are you doing? Test 1 2 3!"
 
+@app.route('/dashboard/')
+def test():
+    return "Hello World How are you doing? Test 1 2 3!"
 
 #from dash import Dash
 #from werkzeug.wsgi import DispatcherMiddleware
