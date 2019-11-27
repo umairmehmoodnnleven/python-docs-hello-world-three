@@ -26,9 +26,9 @@ dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
 #def hello():
 #    return 'hello world!'
 
-@app.route('/dashboard/')
-def render_dashboard():
-    return flask.redirect('/dash1/')
+#@app.route('/dashboard/')
+#def render_dashboard():
+#    return flask.redirect('/dash1/')
 
 
 #@server.route('/reports/')
