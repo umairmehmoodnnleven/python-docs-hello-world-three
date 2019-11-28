@@ -19,6 +19,7 @@ colors = {
     'background': '#1e2130',
     'text': '#7FDBFF'
 }
+df = pd.read_excel('example7.xlsx')
 
 @app.route('/test/')
 def test():
