@@ -42,10 +42,10 @@ def test():
             ],
             'layout': {
                 'title': 'Dash Data Visualization'
+                }
             }
-        }
-    )
-])
+        )
+    ])
     
     
     return dash_app1
