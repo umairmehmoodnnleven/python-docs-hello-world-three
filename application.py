@@ -8,7 +8,8 @@ def hello():
 
 @app.route('/test/')
 def test():
-    return "This is a test"
+    dash_app1 = Dash(__name__, server = app)
+    return dash_app1
 
 #from dash import Dash
 #from werkzeug.wsgi import DispatcherMiddleware
