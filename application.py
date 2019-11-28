@@ -1,5 +1,6 @@
 #from flask import Flask
 import flask
+from dash import Dash
 app = flask.Flask(__name__)
 dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 
