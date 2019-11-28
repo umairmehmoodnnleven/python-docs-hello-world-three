@@ -8,8 +8,12 @@ def hello():
 
 @app.route('/test/')
 def test():
-    dash_app1 = Dash(__name__, server = app)
+    dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
     return dash_app1
+
+#@app.route('/dash1/')
+#def render_dashboard():
+#    return flask.redirect('/dashboard/')
 
 #from dash import Dash
 #from werkzeug.wsgi import DispatcherMiddleware
