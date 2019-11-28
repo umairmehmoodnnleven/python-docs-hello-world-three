@@ -1,11 +1,12 @@
 #from flask import Flask
 import flask
 from dash import Dash
+import dash_core_components as dcc
 import dash_html_components as html
 app = flask.Flask(__name__)
 #dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 #dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
-    
+
 @app.route("/")
 def hello():
     return "Hello World How are you doing? Test 1 2 3!"
@@ -13,7 +14,27 @@ def hello():
 @app.route('/test/')
 def test():
     dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
-    dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
+    dash_app1.layout = html.Div(children=[
+       html.H1(children='Hello Dash'),
+
+       html.Div(children='''
+           Dash: A web application framework for Python.
+       '''),
+        dcc.Graph(
+           id='example-graph',
+           figure={
+               'data': [
+                   {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
+                   {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
+               ],
+               'layout': {
+                   'title': 'Dash Data Visualization'
+               }
+           }
+       )
+   ])   
+    
+    
     return dash_app1
 
 @app.route('/dash1/')
