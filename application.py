@@ -2,7 +2,7 @@
 import flask
 from dash import Dash
 app = flask.Flask(__name__)
-#dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
+dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 
 @app.route("/")
 def hello():
@@ -13,9 +13,9 @@ def test():
     dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
     return dash_app1
 
-#@app.route('/test/')
-#def render_dashboard():
-#    return flask.redirect('/dashboard/')
+@app.route('/dash1/')
+def render_dashboard():
+    return flask.redirect('/dashboard/')
 
 #from dash import Dash
 #from werkzeug.wsgi import DispatcherMiddleware
