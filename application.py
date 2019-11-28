@@ -1,6 +1,6 @@
 #from flask import Flask
 import flask
-from dash import Dash
+import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_daq as daq
@@ -23,9 +23,9 @@ df = pd.read_excel('example7.xlsx')
 
 @app.route('/test/')
 def test():
-    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-    dash_app1 = Dash(__name__, server = app, external_stylesheets = external_stylesheets, url_base_pathname='/dashboard/')
+    dash_app1 = dash.Dash(__name__, server = app, url_base_pathname='/dashboard/')
     dash_app1.layout = html.Div(style={'backgroundColor': colors['background']}, children =[
     html.H1("SII-sensitivities", style={"fontWeight": "bold", "textAlign": "center", 'color' : 'orange'}),
     
