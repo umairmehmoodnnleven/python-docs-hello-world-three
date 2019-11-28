@@ -34,9 +34,9 @@ df = pd.DataFrame( {'Period': {0: '2019 Q2', 1: '2019 Q2', 2: '2019 Q2', 3: '201
 
 @app.route('/test/')
 def test():
-    #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
     #df = pd.read_excel(w_dir + 'example7.xlsx')
-    dash_app1 = dash.Dash(__name__, server = app, url_base_pathname='/dashboard/')
+    dash_app1 = dash.Dash(__name__, server = app, external_stylesheets = external_stylesheets, url_base_pathname='/dashboard/')
     dash_app1.layout = html.Div(style={'backgroundColor': colors['background']}, children =[
     html.H1("SII-sensitivities", style={"fontWeight": "bold", "textAlign": "center", 'color' : 'orange'}),
     
