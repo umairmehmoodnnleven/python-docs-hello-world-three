@@ -37,7 +37,7 @@ def test():
     
     return dash_app1
 
-@app.route('/dash1/')
+@app.route('/test/')
 def render_dashboard():
     return flask.redirect('/dashboard/')
 
