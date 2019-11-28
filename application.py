@@ -21,12 +21,11 @@ colors = {
     'background': '#1e2130',
    'text': '#7FDBFF'
 }
-df = pd.read_excel(w_dir + 'example7.xlsx')
 
 @app.route('/test/')
 def test():
     #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
+    df = pd.read_excel(w_dir + 'example7.xlsx')
     dash_app1 = dash.Dash(__name__, server = app, url_base_pathname='/dashboard/')
     dash_app1.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
