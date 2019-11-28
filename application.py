@@ -1,6 +1,7 @@
 #from flask import Flask
 import flask
 from dash import Dash
+import dash_html_components as html
 app = flask.Flask(__name__)
 #dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 #dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
