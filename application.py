@@ -1,5 +1,6 @@
 #from flask import Flask
 import flask
+import os
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -10,6 +11,7 @@ import plotly.graph_objs as go
 app = flask.Flask(__name__)
 #dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 #dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
+w_dir = os.getcwd()# get current working directory
 
 @app.route("/")
 def hello():
@@ -19,7 +21,7 @@ colors = {
     'background': '#1e2130',
    'text': '#7FDBFF'
 }
-df = pd.read_excel('home/ep50my/python-docs-hello-world-two/example7.xlsx')
+#df = pd.read_excel(w_dir + 'example7.xlsx')
 
 @app.route('/test/')
 def test():
