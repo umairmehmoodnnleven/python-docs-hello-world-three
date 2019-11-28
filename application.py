@@ -2,7 +2,6 @@
 import flask
 from dash import Dash
 app = flask.Flask(__name__)
-dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
 
 @app.route("/")
 def hello():
@@ -11,6 +10,7 @@ def hello():
 @app.route('/test/')
 def test():
     dash_app1 = Dash(__name__, server = app, url_base_pathname='/dashboard/')
+    dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
     return dash_app1
 
 @app.route('/dash1/')
