@@ -15,11 +15,11 @@ app = flask.Flask(__name__)
 def hello():
     return "Hello World How are you doing? Test 1 2 3!"
 
-#colors = {
-#    'background': '#1e2130',
-#   'text': '#7FDBFF'
-#}
-#df = pd.read_excel('example7.xlsx')
+colors = {
+    'background': '#1e2130',
+   'text': '#7FDBFF'
+}
+df = pd.read_excel('example7.xlsx')
 
 @app.route('/test/')
 def test():
