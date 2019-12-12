@@ -13,9 +13,9 @@ app = flask.Flask(__name__)
 #dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
 w_dir = os.getcwd()# get current working directory
 
-@app.route("/")
-def hello():
-    return "Hello World How are you doing? Test 1 2 3!"
+#@app.route("/")
+#def hello():
+#    return "Hello World How are you doing? Test 1 2 3!"
 
 colors = {
     'background': '#1e2130',
@@ -100,7 +100,7 @@ def test():
     
     return dash_app1
 
-@app.route('/test/')
+@app.route('/')
 def render_dashboard():
     return flask.redirect('/dashboard/')
 
