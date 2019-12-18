@@ -36,7 +36,7 @@ df = pd.DataFrame( {'Period': {0: '2019 Q2', 1: '2019 Q2', 2: '2019 Q2', 3: '201
 def test():
     external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
     #df = pd.read_excel(w_dir + 'example7.xlsx')
-    dash_app1 = dash.Dash(__name__, server = app, external_stylesheets = external_stylesheets, url_base_pathname='/dashboard/')
+    dash_app1 = dash.Dash(__name__, server = app, external_stylesheets = external_stylesheets, url_base_pathname='/')
     dash_app1.layout = html.Div(style={'backgroundColor': colors['background']}, children =[
     html.H1("SII-sensitivities", style={"fontWeight": "bold", "textAlign": "center", 'color' : 'orange'}),
     
@@ -71,7 +71,7 @@ def test():
         # dcc.Link('Go to Source Code', href='{}/code'.format(app_name))
     ], className="row")
     
-    @app.callback(
+    @dash_app1.callback(
         dash.dependencies.Output('my-graph', 'figure'),
         [dash.dependencies.Input('product-selected1', 'value'),
         dash.dependencies.Input('product-selected2', 'value')])
