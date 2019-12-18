@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.graph_objs as go
 
 app = flask.Flask(__name__)
-dash_app1 = Dash(__name__, server = app, url_base_pathname='/')
+#dash_app1 = Dash(__name__, server = app, url_base_pathname='/')
 #dash_app1.layout = html.Div([html.H1('Hi there, I am app1 for dashboards')])
 w_dir = os.getcwd()# get current working directory
 
@@ -71,7 +71,7 @@ def test():
         # dcc.Link('Go to Source Code', href='{}/code'.format(app_name))
     ], className="row")
     
-    @dash_app1.callback(
+    @app.callback(
         dash.dependencies.Output('my-graph', 'figure'),
         [dash.dependencies.Input('product-selected1', 'value'),
         dash.dependencies.Input('product-selected2', 'value')])
